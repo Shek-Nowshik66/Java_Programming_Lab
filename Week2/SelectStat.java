@@ -1,8 +1,5 @@
-package week2;
-
 public class SelectStat {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int marks = 90;
 		String day = "Thu";
 		if (marks > 90 && marks <= 100) {

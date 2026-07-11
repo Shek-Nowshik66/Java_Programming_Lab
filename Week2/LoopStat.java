@@ -1,17 +1,24 @@
-package week2;
-
 public class LoopStat {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int i = 0, j = 0;
 		for(int a = 0; a < 5; a++) {
-			System.out.println(a);
+			System.out.print(a + " ");
 		}
+		System.out.println();
+
 		while(i < 3) {
-			System.out.println(i);
+			System.out.print(i++ + " ");
 		}
+		System.out.println();
+
 		do {
-			System.out.println(j);
-		} while(j > 3);
+			System.out.print(j++ + " ");
+		} while(j < 3);
+		System.out.println();
+
+		for(String k : args) {
+			System.out.print(k + " ");
+		}
+		System.out.println();
 	}
 }
