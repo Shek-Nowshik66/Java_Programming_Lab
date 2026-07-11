@@ -1,0 +1,11 @@
+package week2;
+
+public class ClCheck {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a = Integer.parseInt(args[0]);
+		int b = Integer.parseInt(args[1]);
+		System.out.println("Addition of " + a + " and " + b + " is " + (a + b));
+	}
+
+}
