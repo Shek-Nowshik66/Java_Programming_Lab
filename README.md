@@ -599,9 +599,9 @@ public class SelectStat {
 
 &nbsp; System.out.println("C");
 
-&nbsp; } else if (marks > 50 && marks <= 25) {
+&nbsp; } else if (marks > 25 && marks <= 50) {
 
-&nbsp; System.out.println("C");
+&nbsp; System.out.println("D");
 
 &nbsp; } else {
 
@@ -627,7 +627,7 @@ public class SelectStat {
 
 &nbsp; case "Wed":
 
-&nbsp; System.out.println("Wesday");
+&nbsp; System.out.println("Wednesday");
 
 &nbsp; break;
 
