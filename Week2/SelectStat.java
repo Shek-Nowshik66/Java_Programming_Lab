@@ -8,8 +8,8 @@ public class SelectStat {
 			System.out.println("B");
 		} else if (marks > 50 && marks <= 75) {
 			System.out.println("C");
-		} else if (marks > 50 && marks <= 25) {
-			System.out.println("C");
+		} else if (marks > 25 && marks <= 50) {
+			System.out.println("D");
 		} else {
 			System.out.println("F");
 		}
@@ -22,7 +22,7 @@ public class SelectStat {
 			System.out.println("Tuesday");
 			break;
 		case "Wed":
-			System.out.println("Wesday");
+			System.out.println("Wednesday");
 			break;
 		case "Thu":
 			System.out.println("Thursday");
