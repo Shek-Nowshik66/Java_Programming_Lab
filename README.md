@@ -1,4 +1,4 @@
-# Java_Programming_Lab Record
+Java Lab Record
 
 **WEEK 1: Introduction to Java Basics and Class Fundamentals**
 
@@ -113,15 +113,15 @@ public class Sum {
 
 - Enter a number: 6
 
-  Enter a number: 7
+Enter a number: 7
 
-  Addition of 6 and 7 is 13
+Addition of 6 and 7 is 13
 
 - Enter a number: 42
 
-  Enter a number: 7
+Enter a number: 7
 
-  Addition of 42 and 7 is 49
+Addition of 42 and 7 is 49
 
 **Inference:**
 
@@ -255,23 +255,23 @@ public class QuadRoot {
 
 - Enter x^2 co-efficient: 2
 
-  Enter x co-efficient: 2
+Enter x co-efficient: 2
 
-  Enter constant: 4
+Enter constant: 4
 
-  The roots are complex and imaginary.
+The roots are complex and imaginary.
 
 - Enter x^2 co-efficient: 2
 
-  Enter x co-efficient: -2
+Enter x co-efficient: -2
 
-  Enter constant: -4
+Enter constant: -4
 
-  Roots are real and distinct
+Roots are real and distinct
 
-  Root 1 is: 2.0
+Root 1 is: 2.0
 
-  Root 2 is: -1.0
+Root 2 is: -1.0
 
 **Inference:**
 
@@ -319,31 +319,31 @@ public class Oper {
 
 - Increment of 2 is 3
 
-  Decrement of 3 is 2
+Decrement of 3 is 2
 
-  Bitwise AND of 3 and 2 is 2
+Bitwise AND of 3 and 2 is 2
 
-  Bitwise OR of 3 and 2 is 3
+Bitwise OR of 3 and 2 is 3
 
-  Bitwise EX-OR of 3 and 2 is 1
+Bitwise EX-OR of 3 and 2 is 1
 
-  Bitwise Right Shift of 3 is 1
+Bitwise Right Shift of 3 is 1
 
-  Bitwise Left Shift of 2 is 4
+Bitwise Left Shift of 2 is 4
 
 - Increment of 4 is 5
 
-  Decrement of 5 is 4
+Decrement of 5 is 4
 
-  Bitwise AND of 5 and 4 is 4
+Bitwise AND of 5 and 4 is 4
 
-  Bitwise OR of 5 and 4 is 5
+Bitwise OR of 5 and 4 is 5
 
-  Bitwise EX-OR of 5 and 4 is 1
+Bitwise EX-OR of 5 and 4 is 1
 
-  Bitwise Right Shift of 5 is 2
+Bitwise Right Shift of 5 is 2
 
-  Bitwise Left Shift of 4 is 8
+Bitwise Left Shift of 4 is 8
 
 **Inference:**
 
@@ -742,3 +742,633 @@ public class LoopStat {
 **Inference:**
 
 Traditional control loops can be converted into functional sequences using recursion methods or the modern functional streaming API. For example, replacing a standard for loop iteration with java.util.stream.IntStream.range(0, 5).forEach(a -> System.out.print(a + " ")); executes iterative behavior using sleek, modern functional programming.
+
+**WEEK 3: Arrays and Strings**
+
+**Q: Write a Java Program to read and display array of integers using 1D and 2D.**
+
+**Procedure:**
+
+ **int\[\] a = new int\[5\]**: Allocates a fixed sequential block of memory in the system heap area to store 5 primitive integer values.
+
+ **int\[\]\[\] b = new int\[2\]\[2\]**: Declares a two-dimensional grid array structure, functioning essentially as an array of array references to form a \\(2 \\times 2\\) matrix.
+
+ **s.nextInt()**: An active scanner command that scans and parses the next available space-delimited text token from standard input into a primitive int value.
+
+ **for-each loop**: An enhanced iteration loop structure used to cleanly traverse collection sequences or arrays without requiring manual tracking of numeric indexes.
+
+**Program:**
+
+import java.util.Scanner;
+
+public class Array12D {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; int\[\] a = new int\[5\];
+
+&nbsp; int\[\]\[\] b = new int\[2\]\[2\];
+
+&nbsp; Scanner s = new Scanner(System.in);
+
+&nbsp; System.out.print("Enter 5 int array values: ");
+
+&nbsp; for(int i = 0; i < 5; i++)
+
+&nbsp; a\[i\] = s.nextInt();
+
+&nbsp; System.out.print("Enter 2 X 2 matrix values: ");
+
+&nbsp; for(int i = 0; i < 2; i++) {
+
+&nbsp; for(int j = 0; j < 2; j++)
+
+&nbsp; b\[i\]\[j\] = s.nextInt();
+
+&nbsp; }
+
+&nbsp; for(int i : a)
+
+&nbsp; System.out.print(i + " ");
+
+&nbsp; System.out.println();
+
+&nbsp; for(int i = 0; i < 2; i++) {
+
+&nbsp; for(int j = 0; j < 2; j++)
+
+&nbsp; System.out.print(b\[i\]\[j\] + " ");
+
+&nbsp; System.out.println();
+
+&nbsp; }
+
+&nbsp; s.close();
+
+&nbsp; }
+
+}
+
+**Output:**
+
+Enter 5 int array values: 1 2 3 4 5
+
+Enter 2 X 2 matrix values: 1 2 3 4
+
+1 2 3 4 5
+
+1 2
+
+3 4
+
+**Inference:**
+
+Handle data dynamically using collection wrappers like **ArrayList** for linear dimensions and **ArrayList&lt;ArrayList&gt;** for grid matrix dimensions. Additionally, multi-dimensional array values can be formatted and printed cleanly in a single execution line by invoking the built-in utility method **Arrays.deepToString(b)** instead of writing nested traditional loops.
+
+**Q: Write a Java Program to perform Method Overloading.**
+
+**Procedure:**
+
+ **Method Overloading**: A feature that allows a class to have more than one method having the same name, if their argument lists are different in type, number, or sequence.
+
+ **void sum(int a, int b)**: A specific method signature designed to accept two 32-bit primitive integer values to compute their algebraic total.
+
+ **void sum(double a, double b)**: A distinct overloaded method signature designed to accept high-precision 64-bit floating-point numbers.
+
+ **Method Signature**: The combination of a method's name along with its specific type and order of parameters, which Java uses to bind polymorphic calls at compile time.
+
+**Program:**
+
+public class MethodOverload {
+
+&nbsp; void sum(int a, int b) {
+
+&nbsp; System.out.println("Addition of " + a + " and " + b + " is: " + (a + b));
+
+&nbsp; }
+
+&nbsp;
+
+&nbsp; void sum(double a, double b) {
+
+&nbsp; System.out.println("Addition of " + a + " and " + b + " is: " + (a + b));
+
+&nbsp; }
+
+&nbsp;
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; MethodOverload obj = new MethodOverload();
+
+&nbsp; obj.sum(10, 20);
+
+&nbsp; obj.sum(20.5, 30.5);
+
+&nbsp; }
+
+}
+
+**Output:**
+
+Addition of 10 and 20 is: 30
+
+Addition of 20.5 and 30.5 is: 51.0
+
+**Inference:**
+
+Instead of declaring distinct overloaded operations for each specific numeric type variance, you can optimize the architecture by employing **Java Generics bounded by Number fields ()**, or by utilizing **Varargs (variable-length argument lists)** via void sum(int... numbers). A variable-length argument approach lets a single method accept anywhere from zero to an arbitrary count of primitive values dynamically using internal array streaming options.
+
+**Q: Write a Java Program to perform Constructor Overloading.**
+
+**Procedure:**
+
+ **Constructor Overloading**: The practice of declaring multiple initialization blocks within the same class blueprint, where each variant features a unique parameter signature to instantiate objects differently.
+
+ **ConstructOverload()**: A parameterless default constructor block that initializes state variables to default values like null or zero during object birth.
+
+ **ConstructOverload(String n, int i)**: A parameterized constructor structure that explicitly binds external argument data directly to class instance properties during allocation memory stages.
+
+ **new Operator**: A keyword used to allocate instance memory on the system heap area and immediately hand over control to the matching class constructor.
+
+**Program:**
+
+public class ConstructOverload {
+
+&nbsp; String name;
+
+&nbsp; int id;
+
+&nbsp; ConstructOverload() {
+
+&nbsp; name = null;
+
+&nbsp; id = 0;
+
+&nbsp; }
+
+&nbsp;
+
+&nbsp; ConstructOverload(String n, int i) {
+
+&nbsp; name = n;
+
+&nbsp; id = i;
+
+&nbsp; }
+
+&nbsp;
+
+&nbsp; void display() {
+
+&nbsp; System.out.println("Name: " + name + " ID: " + id);
+
+&nbsp; }
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; ConstructOverload obj = new ConstructOverload();
+
+&nbsp; ConstructOverload obj1 = new ConstructOverload("ABC", 1);
+
+&nbsp; obj.display();
+
+&nbsp; obj1.display();
+
+&nbsp; }
+
+}
+
+**Output:**
+
+Name: null ID: 0
+
+Name: ABC ID: 1
+
+**Inference:**
+
+The construction sequence can be written more cleanly by implementing **Explicit Constructor Invocation** via the **this()** reference keyword to chain constructors together. For instance, writing ConstructOverload() { this("Unknown", -1); } eliminates duplication by passing default parameters straight to the parameterized structure, ensuring all property initialization routes flow predictably through a single master controller block.
+
+**Q: Write a Java Program to illustrate Parameter Passing Techniques.**
+
+**Procedure:**
+
+ **Nested Loop (i and j)**: A control flow mechanism where the outer loop tracks total passes over the array dataset and the inner loop systematically compares adjacent neighbors.
+
+ **if(arr\[j\] > arr\[j+1\])**: A relational conditional statement used to determine if two sequential memory elements are out of chronological order.
+
+ **int temp**: A temporary local holding variable used to securely cache an integer value to prevent data overwrites during a value exchange step.
+
+ **sa.sortArr(a, a.length)**: An explicit call invoking an object's custom method block while feeding the targeting reference array and its absolute size as constraints.
+
+**Program:**
+
+public class ParamPassTech {
+
+&nbsp; int marks;
+
+&nbsp; ParamPassTech(int m) {
+
+&nbsp; marks = m;
+
+&nbsp; }
+
+&nbsp;
+
+&nbsp; void display() {
+
+&nbsp; System.out.println("Marks: " + marks);
+
+&nbsp; }
+
+&nbsp;
+
+&nbsp; void compare(ParamPassTech p) {
+
+&nbsp; if(this.marks < p.marks) {
+
+&nbsp; System.out.println("Object p marks is higher: " + p.marks);
+
+&nbsp; } else if(this.marks > p.marks) {
+
+&nbsp; System.out.println("Current invoking Object marks is higher: " + this.marks);
+
+&nbsp; } else
+
+&nbsp; System.out.println("Both Current Invoking object and p object marks is same: " + this.marks);
+
+&nbsp; }
+
+&nbsp;
+
+&nbsp; void updateMarks(int m) {
+
+&nbsp; marks = m;
+
+&nbsp; System.out.println("New Marks is: " + marks);
+
+&nbsp; }
+
+&nbsp;
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; ParamPassTech p1 = new ParamPassTech(95);
+
+&nbsp; ParamPassTech p2 = new ParamPassTech(90);
+
+&nbsp; p1.compare(p2);
+
+&nbsp; p1.updateMarks(96);
+
+&nbsp; p1.display();
+
+&nbsp; }
+
+}
+
+**Output:**
+
+Current invoking Object marks is higher: 95
+
+New Marks is: 96
+
+Marks: 96
+
+**Inference:**
+
+Java strictly implements **Pass-by-Value** for all execution arguments, meaning object method calls merely copy memory pointer addresses rather than the physical object block itself. To prevent unexpected data modifications to class structures inside foreign validation logic routines, parameters should be structured using **Immutable Classes** (such as utilizing the modern **record** keyword structure in newer Java versions). This prevents any unintended internal property modifications entirely across boundary calls.
+
+**Q: Write a Java Program to sort given list of numbers.**
+
+**Procedure:**
+
+ **linearSearch() method**: A custom method block defined to systematically traverse an active collection array sequence from the zeroth position up to the final element marker.
+
+ **if(arr\[i\] == k)**: An absolute equality checker tracking whether the current array memory slot exactly matches the user-specified query target.
+
+ **return i**: An active return control statement that terminates the execution frame immediately and hands back the exact array index where the item resides.
+
+ **return -1**: A standard fallback sentinel value passed back to signal to the main execution frame that the query key does not exist inside the array.
+
+**Program:**
+
+import java.util.Scanner;
+
+public class SortArray {
+
+&nbsp; void sortArr(int arr\[\], int n) {
+
+&nbsp; for(int i = 0; i < n - 1; i++) {
+
+&nbsp; for(int j = 0; j < n - i - 1; j++) {
+
+&nbsp; if(arr\[j\] > arr\[j+1\]) {
+
+&nbsp; int temp = arr\[j+1\];
+
+&nbsp; arr\[j+1\] = arr\[j\];
+
+&nbsp; arr\[j\] = temp;
+
+&nbsp; }
+
+&nbsp; }
+
+&nbsp; }
+
+&nbsp; }
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; SortArray sa = new SortArray();
+
+&nbsp; int a\[\] = new int\[5\];
+
+&nbsp; Scanner s = new Scanner(System.in);
+
+&nbsp; System.out.print("Enter 5 elements to sort: ");
+
+&nbsp; for(int i = 0; i < 5; i++)
+
+&nbsp; a\[i\] = s.nextInt();
+
+&nbsp; sa.sortArr(a, a.length);
+
+&nbsp; for(int b: a)
+
+&nbsp; System.out.print(b + " ");
+
+&nbsp; s.close();
+
+&nbsp; }
+
+}
+
+**Output:**
+
+Enter 5 elements to sort: 5 4 3 2 1
+
+1 2 3 4 5
+
+**Inference:**
+
+Instead of using manual, nested sorting loops which incur an average time complexity of \\(\\mathcal{O}(n^2)\\), standard arrays can be sorted instantly by calling the built-in utility method **Arrays.sort(a)**. For processing high-volume datasets or utilizing parallel computing architectures, the sorting pipeline can be optimized by migrating to a **Arrays.parallelSort(a)** command, which divides the array into sub-blocks for concurrent sorting using the ForkJoin framework.
+
+**Q: Write a Java Program to search for an element using linear search.**
+
+**Procedure:**
+
+ **int c\[\]\[\] = new int\[2\]\[2\]**: Allocates heap space for an empty target \\(2 \\times 2\\) grid matrix structure used specifically to receive resultant computation metrics.
+
+ **Matrix Traversal loops**: Two distinct levels of nested tracking loops where index pointer i targets rows and index pointer j maps column offsets.
+
+ **c\[i\]\[j\] = a\[i\]\[j\] + b\[i\]\[j\]**: An expression that extracts matching matrix grid slots simultaneously, adds their primitive scalar data values, and saves the output to the target structure.
+
+ **j == 2 - 1 ? "" : " "**: A inline ternary conditional statement used to check for the final row coordinate block to format trailing spacer layout outputs cleanly.
+
+**Program:**
+
+import java.util.Scanner;
+
+public class LinearSearch {
+
+&nbsp; int linearSearch(int arr\[\], int n, int k) {
+
+&nbsp; for(int i = 0; i < n; i++) {
+
+&nbsp; if(arr\[i\] == k)
+
+&nbsp; return i;
+
+&nbsp; }
+
+&nbsp; return -1;
+
+&nbsp; }
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; LinearSearch obj = new LinearSearch();
+
+&nbsp; int a\[\] = new int\[5\];
+
+&nbsp; Scanner s = new Scanner(System.in);
+
+&nbsp; System.out.print("Enter 5 elements to search: ");
+
+&nbsp; for(int i = 0; i < 5; i++)
+
+&nbsp; a\[i\] = s.nextInt();
+
+&nbsp; System.out.print("Enter the key: ");
+
+&nbsp; int k = s.nextInt();
+
+&nbsp; int res = obj.linearSearch(a, a.length, k);
+
+&nbsp; if(res == -1)
+
+&nbsp; System.out.println("Key Not Found " + res);
+
+&nbsp; else
+
+&nbsp; System.out.println("Key Found at index: " + res);
+
+&nbsp; s.close();
+
+&nbsp; }
+
+}
+
+**Output:**
+
+Enter 5 elements to search: 5 2 4 1 3
+
+Enter the key: 4
+
+Key Found at index: 2
+
+**Inference:**
+
+Linear search requires a costly traversal time of \\(\\mathcal{O}(n)\\). If the incoming integer dataset is already sorted, performance can be heavily optimized by utilizing a **Binary Search** approach via **Arrays.binarySearch(a, k)**, which shrinks the search territory exponentially in \\(\\mathcal{O}(\\log n)\\) time. Alternatively, you can convert the data structure into a functional abstraction by deploying Java Streams: **IntStream.range(0, a.length).filter(i -> a\[i\] == k).findFirst().orElse(-1)**.
+
+**Q: Write a Java Program to perform addition of two matrices.**
+
+**Procedure:**
+
+ **c\[i\]\[j\] = 0**: A foundational cleanup step executed inside the loop initialization block to guarantee accumulator index values start fresh at baseline zero.
+
+ **for(int k=0; k<2; k++)**: An independent inner dot-product tracker tracking parallel shifts across row columns of Matrix A alongside column rows of Matrix B.
+
+ **c\[i\]\[j\] += a\[i\]\[k\] \* b\[k\]\[j\]**: An assignment expression that calculates dot product transformations by accumulating scaled matrix coordinate pairs.
+
+**Program:**
+
+import java.util.Scanner;
+
+class AddMat {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; Scanner s = new Scanner(System.in);
+
+&nbsp; int a\[\]\[\] = new int\[2\]\[2\];
+
+&nbsp; int b\[\]\[\] = new int\[2\]\[2\];
+
+&nbsp; int c\[\]\[\] = new int\[2\]\[2\];
+
+&nbsp; for (int i = 0; i < 2; i++) {
+
+&nbsp; for(int j = 0; j < 2; j++)
+
+&nbsp; a\[i\]\[j\] = s.nextInt();
+
+&nbsp; }
+
+&nbsp; for (int i = 0; i < 2; i++) {
+
+&nbsp; for(int j = 0; j < 2; j++)
+
+&nbsp; b\[i\]\[j\] = s.nextInt();
+
+&nbsp; }
+
+&nbsp; for (int i = 0; i < 2; i++) {
+
+&nbsp; for(int j = 0; j < 2; j++)
+
+&nbsp; c\[i\]\[j\] = a\[i\]\[j\] + b\[i\]\[j\];
+
+&nbsp; }
+
+&nbsp; for (int i = 0; i < 2; i++) {
+
+&nbsp; for(int j = 0; j < 2; j++)
+
+&nbsp; System.out.print(c\[i\]\[j\] + (j == 2 - 1 ? "" : " "));
+
+&nbsp; System.out.println();
+
+&nbsp; }
+
+&nbsp; s.close();
+
+&nbsp; }
+
+}
+
+**Output:**
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+6 8
+
+10 12
+
+**Inference:**
+
+Instead of manually processing matching slots inside basic primitives using traditional nested loop tracking paths, complex multi-dimensional mathematical equations are better handled by utilizing **Apache Commons Math** or **EJML (Efficient Java Matrix Library)**. Utilizing these external library wrappers simplifies matrix addition down to a clean, single-line expression: **RealMatrix c = a.add(b);**.
+
+**Q: Write a Java Program to print multiplication of two matrices.**
+
+**Procedure:**
+
+ **void compare(ParamPassTech p)**: A method layout signature indicating **Call-by-Reference / Object Passing**, where a reference variable pointing to an object is handed over.
+
+ **this.marks**: An instance pointer variable used to refer explicitly to the data fields belonging to the current instance invoking the execution sequence.
+
+ **p.marks**: A dot-notation member field access instruction utilized to extract instance data stored directly inside the incoming foreign object parameter.
+
+ **void updateMarks(int m)**: A basic primitive method block modeling traditional **Call-by-Value / Pass-by-Value**, where a completely independent duplicate value clone copy is received.
+
+**Program:**
+
+import java.util.Scanner;
+
+class MulMat {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; Scanner s = new Scanner(System.in);
+
+&nbsp; int a\[\]\[\] = new int\[2\]\[2\];
+
+&nbsp; int b\[\]\[\] = new int\[2\]\[2\];
+
+&nbsp; int c\[\]\[\] = new int\[2\]\[2\];
+
+&nbsp; for (int i = 0; i < 2; i++) {
+
+&nbsp; for(int j = 0; j < 2; j++)
+
+&nbsp; a\[i\]\[j\] = s.nextInt();
+
+&nbsp; }
+
+&nbsp; for (int i = 0; i < 2; i++) {
+
+&nbsp; for(int j = 0; j < 2; j++)
+
+&nbsp; b\[i\]\[j\] = s.nextInt();
+
+&nbsp; }
+
+&nbsp; for (int i = 0; i < 2; i++) {
+
+&nbsp; for(int j = 0; j < 2; j++) {
+
+&nbsp; c\[i\]\[j\] = 0;
+
+&nbsp; for(int k = 0; k < 2; k++)
+
+&nbsp; c\[i\]\[j\] = a\[i\]\[j\] + b\[i\]\[j\];
+
+&nbsp; }
+
+&nbsp; }
+
+&nbsp; for (int i = 0; i < 2; i++) {
+
+&nbsp; for(int j = 0; j < 2; j++)
+
+&nbsp; System.out.print(c\[i\]\[j\] + (j == 2 - 1 ? "" : " "));
+
+&nbsp; System.out.println();
+
+&nbsp; }
+
+&nbsp; s.close();
+
+&nbsp; }
+
+}
+
+**Output:**
+
+1 2 3 4
+
+1 2 3 4
+
+2 4
+
+6 8
+
+**Inference:**
+
+Manual matrix multiplication scripts run at a high computational cost of \\(\\mathcal{O}(n^3)\\). To achieve enhanced throughput, calculations can be updated using parallel streaming pathways or external math frameworks like **ND4J (N-Dimensional Arrays for Java)**. These platforms optimize operational overhead by translating structural math routines directly into optimized vector processing instructions (BLAS/LAPACK) executed straight on native hardware layers.
