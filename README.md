@@ -1,10 +1,10 @@
-Java Lab Record
+**WEEK-1**
 
-**WEEK 1: Introduction to Java Basics and Class Fundamentals**
+(Introduction to Java Basics and Class Fundamentals)
 
-**Q: Write a simple Java Program that prints "Hello World" to the console.**
+**Q1)** Write a simple Java Program that prints "Hello World" to the console.
 
-**Procedure:**
+**PROCEDURE:**
 
 **public class Hello**: Defines a universally accessible blueprint named Hello.
 
@@ -14,7 +14,7 @@ Java Lab Record
 
 **System.out.println()**: A built-in system command that routes text data to the standard console screen.
 
-**Program:**
+**PROGRAM:**
 
 public class Hello {
 
@@ -26,17 +26,17 @@ public class Hello {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 Hello World
 
-**Inference:**
+**INFERENCE:**
 
 The identical task can be written as an alternative variant using an external text block, a character array, or the formatting variant System.out.printf(). For instance, invoking System.out.printf("%s\\n", "Hello World"); replaces standard text routing with structured string formatting.
 
-**Q: Write a Java Program to perform addition of two using command line arguments.**
+**Q2)** Write a Java Program to perform addition of two using command line arguments.
 
-**Procedure:**
+**PROCEDURE:**
 
 **class ClSum**: Allocates a default package-private blueprint class configuration.
 
@@ -46,7 +46,7 @@ The identical task can be written as an alternative variant using an external te
 
 **\+ Operator**: Serves a dual function of performing arithmetic addition and handling text concatenation.
 
-**Program:**
+**PROGRAM:**
 
 class ClSum {
 
@@ -62,18 +62,18 @@ class ClSum {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 - Addition of 10 and 20 is 30
 - Addition of 25 and 35 is 60
 
-**Inference:**
+**INFERENCE:**
 
 Instead of using the raw primitive converter Integer.parseInt(), values can be extracted by utilizing the wrapper constructor utility Integer.valueOf(args\[i\]).intValue(). Alternatively, you can iterate dynamically over an arbitrary count of console arguments using an enhanced for-each loop scheme to accumulate a running total instead of hardcoded array indexes.
 
-**Q: Write a Java Program to perform addition of two using Scanner class.**
+**Q3)** Write a Java Program to perform addition of two using Scanner class.
 
-**Procedure:**
+**PROCEDURE:**
 
 **import java.util.Scanner**: References an external utility toolkit library designed for dissecting input.
 
@@ -83,7 +83,7 @@ Instead of using the raw primitive converter Integer.parseInt(), values can be e
 
 **s.close()**: Shuts down the scanner tracking mechanism to prevent system resource allocation leaks.
 
-**Program:**
+**PROGRAM:**
 
 import java.util.Scanner;
 
@@ -109,7 +109,7 @@ public class Sum {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 - Enter a number: 6
 
@@ -123,13 +123,13 @@ Enter a number: 7
 
 Addition of 42 and 7 is 49
 
-**Inference:**
+**INFERENCE:**
 
 A higher-performance reading approach involves swapping the scanner utility out for a combination of BufferedReader and InputStreamReader. Utilizing new BufferedReader(new InputStreamReader(System.in)).readLine() fetches the entire line as a single string, which is then fragmented using a string tokenizer setup or split mechanisms before numeric calculation.
 
-**Q: Write a Java Class to display default value of all primitive data types of JAVA.**
+**Q4)** Write a Java Class to display default value of all primitive data types of JAVA.
 
-**Procedure:**
+**PROCEDURE:**
 
 **static Variables**: Class-level states that exist independently of specific instances and automatically receive default values.
 
@@ -139,7 +139,7 @@ A higher-performance reading approach involves swapping the scanner utility out 
 
 **boolean**: A binary logic state container initialized by default to a false setting.
 
-**Program:**
+**PROGRAM:**
 
 public class StaticDefVal {
 
@@ -165,17 +165,17 @@ public class StaticDefVal {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 0 0.0 0.0 0 0 0 false
 
-**Inference:**
+**INFERENCE:**
 
 An alternative verification route is to selectively extract default values from newly allocated arrays. Declaring an uninitialized single-element array block (e.g., new boolean\[1\]\[0\]) automatically populates structural elements with default values without requiring explicit static class fields.
 
-**Q: Write a Java Program that displays the roots of a quadratic equation ax<sup>2</sup> + bx + c = 0. Calculate the discriminant D and basing on the value of D, describe the nature of the roots.**
+**Q5)** Write a Java Program that displays the roots of a quadratic equation ax<sup>2</sup> + bx + c = 0. Calculate the discriminant D and basing on the value of D, describe the nature of the roots.
 
-**Procedure:**
+**PROCEDURE:**
 
 **s.nextDouble()**: Reads and converts incoming character inputs directly into high-precision double values.
 
@@ -185,7 +185,7 @@ An alternative verification route is to selectively extract default values from 
 
 **Math.sqrt(d)**: A native math function computing numerical square roots.
 
-**Program:**
+**PROGRAM:**
 
 import java.util.Scanner;
 
@@ -251,7 +251,7 @@ public class QuadRoot {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 - Enter x^2 co-efficient: 2
 
@@ -273,13 +273,13 @@ Root 1 is: 2.0
 
 Root 2 is: -1.0
 
-**Inference:**
+**INFERENCE:**
 
 The operational logic can be enhanced by integrating Java Complex Data Type classes or writing a custom structural object to cleanly render imaginary coefficients. Instead of stopping execution with a text error output when dealing with negative values, complex numbers can be expressed as realPart + " + " + imaginaryPart + "i".
 
-**Q: Write a Java Program to illustrate increment/decrement and bitwise operators.**
+**Q6)** Write a Java Program to illustrate increment/decrement and bitwise operators.
 
-**Procedure:**
+**PROCEDURE:**
 
 **++a, --b**: Pre-increment and pre-decrement operations that alter state immediately prior to expression valuation.
 
@@ -287,7 +287,7 @@ The operational logic can be enhanced by integrating Java Complex Data Type clas
 
 **\>>, <<**: Shift operations that physically slide internal bit arrays right (dividing by 2) or left (multiplying by 2).
 
-**Program:**
+**PROGRAM:**
 
 public class Oper {
 
@@ -315,7 +315,7 @@ public class Oper {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 - Increment of 2 is 3
 
@@ -345,13 +345,13 @@ Bitwise Right Shift of 5 is 2
 
 Bitwise Left Shift of 4 is 8
 
-**Inference:**
+**INFERENCE:**
 
-Standard shorthand mutations (e.g., a += 1) can alternate for regular increment/decrement tasks. For shifting, you can swap low-level bit operations for equivalent binary arithmetic transformations or rely on the explicit [Java BigInteger Class](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html) framework methods like .shiftLeft() and .and() to manage structural transformations safely on large numbers.
+Standard shorthand mutations (e.g., a += 1) can alternate for regular increment/decrement tasks. For shifting, you can swap low-level bit operations for equivalent binary arithmetic transformations or rely on the explicit Java.BigInteger Class framework methods like .shiftLeft() and .and() to manage structural transformations safely on large numbers.
 
-**Q: Write a Java Program to take student name and roll no from command line.**
+**Q7)** Write a Java Program to take student name and roll no from command line.
 
-**Procedure:**
+**PROCEDURE:**
 
 **class Studentdetails**: Declares a standard class structure to encapsulate the student profile logic.
 
@@ -359,7 +359,7 @@ Standard shorthand mutations (e.g., a += 1) can alternate for regular increment/
 
 **args\[1\]**: An array index pointing to the second user input string supplied during program execution, representing the student's name.
 
-**Program:**
+**PROGRAM:**
 
 class Studentdetails {
 
@@ -373,19 +373,19 @@ class Studentdetails {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 Roll no.: 25335A0527
 
 Name: Nowshik
 
-**Inference:**
+**INFERENCE:**
 
 Instead of directly accessing the array elements by hardcoded indexes (which throws an error if arguments are missing), you can parse the input safely by checking the array size first. Alternatively, you can map the array to an interactive input streaming approach using java.util.Scanner to prompt the user step-by-step if no arguments are provided at launch.
 
-**Q: Write a Java Program to print the number of arguments in command line.**
+**Q8)** Write a Java Program to print the number of arguments in command line.
 
-**Procedure:**
+**PROCEDURE:**
 
 **public class ClLen**: Establishes a universally accessible class definition for the argument count program.
 
@@ -393,7 +393,7 @@ Instead of directly accessing the array elements by hardcoded indexes (which thr
 
 **int a**: A local numeric container variable used to store the retrieved count value.
 
-**Program:**
+**PROGRAM:**
 
 public class ClLen {
 
@@ -407,19 +407,21 @@ public class ClLen {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 Numbers of arguments in Command Line is 2
 
-**Inference:**
+**INFERENCE:**
 
-Instead of using the raw .length field property on the array, the arguments can be processed and counted by using the modern [Java Stream API](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html). Running java.util.Arrays.stream(args).count() produces the exact same numeric result using functional programming structures.
+Instead of using the raw .length field property on the array, the arguments can be processed and counted by using the modern Java.Stream API. Running java.util.Arrays.stream(args).count() produces the exact same numeric result using functional programming structures.
 
-**WEEK 2: Control and Iteration Statements, Classes and Methods**
+**WEEK-2**
 
-**Q: Write a Java Program to illustrate definition of class and creation of object with example.**
+(Control and Iteration Statements, Classes and Methods)
 
-**Procedure:**
+**Q1)** Write a Java Program to illustrate definition of class and creation of object with example.
+
+**PROCEDURE:**
 
 **int rollno; String name, dept;**: Defines instance fields within the class structure to describe the attributes of a student.
 
@@ -427,7 +429,7 @@ Instead of using the raw .length field property on the array, the arguments can 
 
 **Dot (.) Operator**: A member access operator used to reference and assign values to individual fields inside the object.
 
-**Program:**
+**PROGRAM:**
 
 public class Student {
 
@@ -451,23 +453,23 @@ public class Student {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 Name is ABC bearing Roll Number 27 in Department CSE
 
-**Inference:**
+**INFERENCE:**
 
 Rather than exposing internal properties directly to public modification using raw assignments, you can follow standard encapsulation design principles. This involves making the class fields private and exposing them through controlled public getter and setter methods.
 
-**Q: Write a Java Program to illustrate class, object and method.**
+**Q2)** Write a Java Program to illustrate class, object and method.
 
-**Procedure:**
+**PROCEDURE:**
 
 **public void show()**: Declares an instance behavior method that does not return any data value (void).
 
 **s.show()**: Invokes the object's specific internal block of code to run its instructions on the target instance.
 
-**Program:**
+**PROGRAM:**
 
 class Student1 {
 
@@ -503,17 +505,17 @@ public class CMethod {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 Name is ABC bearing ID 27 in Department CSE
 
-**Inference:**
+**INFERENCE:**
 
 You can replace standard message-printing methods by overriding the native public String toString() method inherited from Java's base Object class. This allows you to print the object state automatically when passing the object reference directly into System.out.println(s);.
 
-**Q: Write a Java Program to illustrate class, object, method and constructor.**
+**Q3)** Write a Java Program to illustrate class, object, method and constructor.
 
-**Procedure:**
+**PROCEDURE:**
 
 **Box(double h, double w, double d)**: A parameterized constructor method that initializes an object automatically at the moment of its creation.
 
@@ -521,7 +523,7 @@ You can replace standard message-printing methods by overriding the native publi
 
 **new Box(2, 3, 4)**: Supplies custom initialization values directly to the constructor during memory allocation.
 
-**Program:**
+**PROGRAM:**
 
 class Box {
 
@@ -557,17 +559,17 @@ public class ConstJava {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 Cube of height 2.0 width 3.0 depth 4.0 volume 24.0
 
-**Inference:**
+**INFERENCE:**
 
 The setup can be modified by introducing constructor overloading. By writing a secondary parameterless default constructor Box() { this(1, 1, 1); }, the program can seamlessly initialize standard unit dimensions automatically whenever custom values are not provided.
 
-**Q: Write a Java Program to illustrate selection statements.**
+**Q4)** Write a Java Program to illustrate selection statements.
 
-**Procedure:**
+**PROCEDURE:**
 
 **if-else if-else**: A multi-way conditional structure that checks logical conditions sequentially from top to bottom.
 
@@ -577,7 +579,7 @@ The setup can be modified by introducing constructor overloading. By writing a s
 
 **break;**: A control statement used to immediately exit the active switch block context and prevent fall-through execution.
 
-**Program:**
+**PROGRAM:**
 
 public class SelectStat {
 
@@ -665,19 +667,19 @@ public class SelectStat {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 B
 
 Thursday
 
-**Inference:**
+**INFERENCE:**
 
 The legacy switch block format can be upgraded into the modern structural Java Switch Expression syntax introduced in newer versions of Java. Using the arrow pattern (e.g., case "Mon" -> System.out.println("Monday");) completely removes the need for typing manual break; statements.
 
-**Q: Write a Java Program to illustrate looping statements.**
+**Q5)** Write a Java Program to illustrate looping statements.
 
-**Procedure:**
+**PROCEDURE:**
 
 **for(int a = 0; a < 5; a++)**: A counter-controlled loop that encapsulates initialization, condition checking, and step updates in one clean header line.
 
@@ -687,7 +689,7 @@ The legacy switch block format can be upgraded into the modern structural Java S
 
 **for(String k : args)**: An enhanced for-each iteration loop that loops over collection arrays sequentially without using raw numeric indices.
 
-**Program:**
+**PROGRAM:**
 
 public class LoopStat {
 
@@ -731,7 +733,7 @@ public class LoopStat {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 0 1 2 3 4
 
@@ -739,15 +741,17 @@ public class LoopStat {
 
 0 1 2
 
-**Inference:**
+**INFERENCE:**
 
 Traditional control loops can be converted into functional sequences using recursion methods or the modern functional streaming API. For example, replacing a standard for loop iteration with java.util.stream.IntStream.range(0, 5).forEach(a -> System.out.print(a + " ")); executes iterative behavior using sleek, modern functional programming.
 
-**WEEK 3: Arrays and Strings**
+**WEEK-3**
 
-**Q: Write a Java Program to read and display array of integers using 1D and 2D.**
+**(**Arrays and Strings)
 
-**Procedure:**
+**Q1)** Write a Java Program to read and display array of integers using 1D and 2D.
+
+**PROCEDURE:**
 
  **int\[\] a = new int\[5\]**: Allocates a fixed sequential block of memory in the system heap area to store 5 primitive integer values.
 
@@ -757,7 +761,7 @@ Traditional control loops can be converted into functional sequences using recur
 
  **for-each loop**: An enhanced iteration loop structure used to cleanly traverse collection sequences or arrays without requiring manual tracking of numeric indexes.
 
-**Program:**
+**PROGRAM:**
 
 import java.util.Scanner;
 
@@ -809,7 +813,7 @@ public class Array12D {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 Enter 5 int array values: 1 2 3 4 5
 
@@ -821,13 +825,13 @@ Enter 2 X 2 matrix values: 1 2 3 4
 
 3 4
 
-**Inference:**
+**INFERENCE:**
 
 Handle data dynamically using collection wrappers like **ArrayList** for linear dimensions and **ArrayList&lt;ArrayList&gt;** for grid matrix dimensions. Additionally, multi-dimensional array values can be formatted and printed cleanly in a single execution line by invoking the built-in utility method **Arrays.deepToString(b)** instead of writing nested traditional loops.
 
-**Q: Write a Java Program to perform Method Overloading.**
+**Q2)** Write a Java Program to perform Method Overloading.
 
-**Procedure:**
+**PROCEDURE:**
 
  **Method Overloading**: A feature that allows a class to have more than one method having the same name, if their argument lists are different in type, number, or sequence.
 
@@ -837,7 +841,7 @@ Handle data dynamically using collection wrappers like **ArrayList** for linear 
 
  **Method Signature**: The combination of a method's name along with its specific type and order of parameters, which Java uses to bind polymorphic calls at compile time.
 
-**Program:**
+**PROGRAM:**
 
 public class MethodOverload {
 
@@ -869,19 +873,19 @@ public class MethodOverload {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 Addition of 10 and 20 is: 30
 
 Addition of 20.5 and 30.5 is: 51.0
 
-**Inference:**
+**INFERENCE:**
 
 Instead of declaring distinct overloaded operations for each specific numeric type variance, you can optimize the architecture by employing **Java Generics bounded by Number fields ()**, or by utilizing **Varargs (variable-length argument lists)** via void sum(int... numbers). A variable-length argument approach lets a single method accept anywhere from zero to an arbitrary count of primitive values dynamically using internal array streaming options.
 
-**Q: Write a Java Program to perform Constructor Overloading.**
+**Q3)** Write a Java Program to perform Constructor Overloading.
 
-**Procedure:**
+**PROCEDURE:**
 
  **Constructor Overloading**: The practice of declaring multiple initialization blocks within the same class blueprint, where each variant features a unique parameter signature to instantiate objects differently.
 
@@ -891,7 +895,7 @@ Instead of declaring distinct overloaded operations for each specific numeric ty
 
  **new Operator**: A keyword used to allocate instance memory on the system heap area and immediately hand over control to the matching class constructor.
 
-**Program:**
+**PROGRAM:**
 
 public class ConstructOverload {
 
@@ -939,19 +943,19 @@ public class ConstructOverload {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 Name: null ID: 0
 
 Name: ABC ID: 1
 
-**Inference:**
+**INFERENCE:**
 
 The construction sequence can be written more cleanly by implementing **Explicit Constructor Invocation** via the **this()** reference keyword to chain constructors together. For instance, writing ConstructOverload() { this("Unknown", -1); } eliminates duplication by passing default parameters straight to the parameterized structure, ensuring all property initialization routes flow predictably through a single master controller block.
 
-**Q: Write a Java Program to illustrate Parameter Passing Techniques.**
+**Q4)** Write a Java Program to illustrate Parameter Passing Techniques.
 
-**Procedure:**
+**PROCEDURE:**
 
  **Nested Loop (i and j)**: A control flow mechanism where the outer loop tracks total passes over the array dataset and the inner loop systematically compares adjacent neighbors.
 
@@ -961,7 +965,7 @@ The construction sequence can be written more cleanly by implementing **Explicit
 
  **sa.sortArr(a, a.length)**: An explicit call invoking an object's custom method block while feeding the targeting reference array and its absolute size as constraints.
 
-**Program:**
+**PROGRAM:**
 
 public class ParamPassTech {
 
@@ -1027,7 +1031,7 @@ public class ParamPassTech {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 Current invoking Object marks is higher: 95
 
@@ -1035,13 +1039,13 @@ New Marks is: 96
 
 Marks: 96
 
-**Inference:**
+**INFERENCE:**
 
 Java strictly implements **Pass-by-Value** for all execution arguments, meaning object method calls merely copy memory pointer addresses rather than the physical object block itself. To prevent unexpected data modifications to class structures inside foreign validation logic routines, parameters should be structured using **Immutable Classes** (such as utilizing the modern **record** keyword structure in newer Java versions). This prevents any unintended internal property modifications entirely across boundary calls.
 
-**Q: Write a Java Program to sort given list of numbers.**
+**Q5)** Write a Java Program to sort given list of numbers.
 
-**Procedure:**
+**PROCEDURE:**
 
  **linearSearch() method**: A custom method block defined to systematically traverse an active collection array sequence from the zeroth position up to the final element marker.
 
@@ -1051,7 +1055,7 @@ Java strictly implements **Pass-by-Value** for all execution arguments, meaning 
 
  **return -1**: A standard fallback sentinel value passed back to signal to the main execution frame that the query key does not exist inside the array.
 
-**Program:**
+**PROGRAM:**
 
 import java.util.Scanner;
 
@@ -1105,19 +1109,19 @@ public class SortArray {
 
 }
 
-**Output:**
+**OUTPUT:**
 
 Enter 5 elements to sort: 5 4 3 2 1
 
 1 2 3 4 5
 
-**Inference:**
+**INFERENCE:**
 
 Instead of using manual, nested sorting loops which incur an average time complexity of \\(\\mathcal{O}(n^2)\\), standard arrays can be sorted instantly by calling the built-in utility method **Arrays.sort(a)**. For processing high-volume datasets or utilizing parallel computing architectures, the sorting pipeline can be optimized by migrating to a **Arrays.parallelSort(a)** command, which divides the array into sub-blocks for concurrent sorting using the ForkJoin framework.
 
-**Q: Write a Java Program to search for an element using linear search.**
+**Q6**) Write a Java Program to search for an element using linear search.
 
-**Procedure:**
+**PROCEDURE:**
 
  **int c\[\]\[\] = new int\[2\]\[2\]**: Allocates heap space for an empty target \\(2 \\times 2\\) grid matrix structure used specifically to receive resultant computation metrics.
 
@@ -1127,7 +1131,7 @@ Instead of using manual, nested sorting loops which incur an average time comple
 
  **j == 2 - 1 ? "" : " "**: A inline ternary conditional statement used to check for the final row coordinate block to format trailing spacer layout outputs cleanly.
 
-**Program:**
+**PROGRAM:**
 
 import java.util.Scanner;
 
@@ -1189,13 +1193,13 @@ Enter the key: 4
 
 Key Found at index: 2
 
-**Inference:**
+**INFERENCE:**
 
 Linear search requires a costly traversal time of \\(\\mathcal{O}(n)\\). If the incoming integer dataset is already sorted, performance can be heavily optimized by utilizing a **Binary Search** approach via **Arrays.binarySearch(a, k)**, which shrinks the search territory exponentially in \\(\\mathcal{O}(\\log n)\\) time. Alternatively, you can convert the data structure into a functional abstraction by deploying Java Streams: **IntStream.range(0, a.length).filter(i -> a\[i\] == k).findFirst().orElse(-1)**.
 
-**Q: Write a Java Program to perform addition of two matrices.**
+**Q7)** Write a Java Program to perform addition of two matrices.
 
-**Procedure:**
+**PROCEDURE**:
 
  **c\[i\]\[j\] = 0**: A foundational cleanup step executed inside the loop initialization block to guarantee accumulator index values start fresh at baseline zero.
 
@@ -1203,7 +1207,7 @@ Linear search requires a costly traversal time of \\(\\mathcal{O}(n)\\). If the 
 
  **c\[i\]\[j\] += a\[i\]\[k\] \* b\[k\]\[j\]**: An assignment expression that calculates dot product transformations by accumulating scaled matrix coordinate pairs.
 
-**Program:**
+**PROGRAM:**
 
 import java.util.Scanner;
 
@@ -1259,7 +1263,7 @@ class AddMat {
 
 }
 
-**Output:**
+**OUTPUT**:
 
 1
 
@@ -1281,13 +1285,13 @@ class AddMat {
 
 10 12
 
-**Inference:**
+**INFERENCE**:
 
 Instead of manually processing matching slots inside basic primitives using traditional nested loop tracking paths, complex multi-dimensional mathematical equations are better handled by utilizing **Apache Commons Math** or **EJML (Efficient Java Matrix Library)**. Utilizing these external library wrappers simplifies matrix addition down to a clean, single-line expression: **RealMatrix c = a.add(b);**.
 
-**Q: Write a Java Program to print multiplication of two matrices.**
+**Q8)** Write a Java Program to print multiplication of two matrices.
 
-**Procedure:**
+**PROCEDURE:**
 
  **void compare(ParamPassTech p)**: A method layout signature indicating **Call-by-Reference / Object Passing**, where a reference variable pointing to an object is handed over.
 
@@ -1297,7 +1301,7 @@ Instead of manually processing matching slots inside basic primitives using trad
 
  **void updateMarks(int m)**: A basic primitive method block modeling traditional **Call-by-Value / Pass-by-Value**, where a completely independent duplicate value clone copy is received.
 
-**Program:**
+**PROGRAM:**
 
 import java.util.Scanner;
 
@@ -1359,7 +1363,7 @@ class MulMat {
 
 }
 
-**Output:**
+**OUTPUT**:
 
 1 2 3 4
 
@@ -1369,6 +1373,596 @@ class MulMat {
 
 6 8
 
-**Inference:**
+**INFERENCE**:
 
 Manual matrix multiplication scripts run at a high computational cost of \\(\\mathcal{O}(n^3)\\). To achieve enhanced throughput, calculations can be updated using parallel streaming pathways or external math frameworks like **ND4J (N-Dimensional Arrays for Java)**. These platforms optimize operational overhead by translating structural math routines directly into optimized vector processing instructions (BLAS/LAPACK) executed straight on native hardware layers.
+
+**Q9)** Write a Java Program to check the string palindrome property.
+
+**PROCEDURE:**
+
+** Scanner(System.in):** Instantiates a utility object that captures raw characters typed into the standard computer keyboard context.
+
+** str.toLowerCase():** Converts all alphabetical characters inside the string instance into lowercase to ensure case-insensitive text comparisons.
+
+** str.charAt(i):** Retrieves a single, specific 16-bit Unicode character located at a designated index offset within the string.
+
+** str.equals(newStr):** Performs a structural content comparison checking if two distinct string object sequences contain identical character arrangements.
+
+**PROGRAM:**
+
+import java.util.Scanner;
+
+public class StrPalin {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; Scanner s = new Scanner(System.in);
+
+&nbsp; System.out.print("Enter a String: ");
+
+&nbsp; String str = s.next().toLowerCase();
+
+&nbsp; String newStr = "";
+
+&nbsp; for(int i = (str.length() - 1); i >= 0; i--) {
+
+&nbsp; newStr += str.charAt(i);
+
+&nbsp; }
+
+&nbsp; if(str.equals(newStr)) {
+
+&nbsp; System.out.println("Given String is Palindrome " + str);
+
+&nbsp; } else {
+
+&nbsp; System.out.println("Given String is not Palindrome " + str);
+
+&nbsp; }
+
+&nbsp; s.close();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Enter a String: Madam
+
+Given String is Palindrome madam
+
+**INFERENCE:**
+
+Using a manual for loop reversal step is to leverage the built-in mutable string utility classes. You can pass the original string into a StringBuilder or StringBuffer, call its native reversing mechanics, and compare it directly to the source text using an expression like: str.equals(new StringBuilder(str).reverse().toString()).
+
+**Q10)** Write a Java Program to illustrate String handling methods (charAt(), compareTo(), equals(), indexOf(), lastIndexOf(), substring(), toUpperCase(), toLowerCase(), concat(), equals(), equalsIgnoreCase(), startsWith(), endsWith(), contains()).
+
+**PROCEDURE:**
+
+ **s1.length()**: Returns the absolute count of 16-bit characters present within the targeted immutable string instance.
+
+ **s1.substring(1, 5)**: Extracts a specific string segment starting from a defined initial index position up to a designated terminal index boundaries.
+
+ **s1.indexOf("o")**: Scans text from the left boundary and returns the initial index location of a specific target character or substring pattern.
+
+ **s1.contains("ell")**: Evaluates whether a precise sequence of characters exists inside a targeted string variable, returning a boolean state.
+
+**PROGRAM:**
+
+public class StrMethod {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; String s1 = "Hello", s2 = "Hello World";
+
+&nbsp; System.out.println("Given String: " + s1);
+
+&nbsp; System.out.println("String Length: " + s1.length());
+
+&nbsp; System.out.println("Substring of " + s1 + " is " + s1.substring(1, 5));
+
+&nbsp; System.out.println("UpperCase String: " + s1.toUpperCase());
+
+&nbsp; System.out.println("LowerCase String: " + s1.toLowerCase());
+
+&nbsp; System.out.println("'o' String Index: " + s1.indexOf("o"));
+
+&nbsp; System.out.println("'o' String Last Index: " + s1.lastIndexOf("o"));
+
+&nbsp; System.out.println("Concat ' World' to the String: " + s1.concat(" World"));
+
+&nbsp; System.out.println("Is Same Strings: " + s1.equals(s2));
+
+&nbsp; System.out.println("Is Same Strings: " + s1.equalsIgnoreCase(s2));
+
+&nbsp; System.out.println("Compare two Strings: " + s1.compareTo(s2));
+
+&nbsp; System.out.println("String startswith 'H': " + s1.startsWith("H"));
+
+&nbsp; System.out.println("String endswith 'H': " + s1.endsWith("e"));
+
+&nbsp; System.out.println("String contains 'ell': " + s1.contains("ell"));
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Given String: Hello
+
+String Length: 5
+
+Substring of Hello is ello
+
+UpperCase String: HELLO
+
+LowerCase String: hello
+
+'o' String Index: 4
+
+'o' String Last Index: 4
+
+Concat ' World' to the String: Hello
+
+Is Same Strings: false
+
+Is Same Strings: false
+
+Compare two Strings: -6
+
+String startswith 'H': true
+
+String endswith 'H': false
+
+String contains 'ell': true
+
+**INFERENCE:**
+
+When your applications demand heavy, repetitive text manipulations, swapping immutable String methods for StringBuilder operations mitigates memory thrashing. Additionally, complex string validations-such as verifying prefixes, matching suffix variants, or extracting matching fragments-can be written cleanly and robustly by employing the modern java.util.regex.Pattern (Regular Expressions) framework.
+
+**WEEK-4**
+
+(Static Members, String Buffer and Inheritance)
+
+**Q1)** Write a Java Program to illustrate static variable, static method, and static block.
+
+**PROCEDURE:**
+
+- **static String staticVar**: Allocates a single class-level memory space shared among all generated instances, loaded automatically when the virtual machine starts.
+- **static { ... }**: An explicit static initialization block that fires automatically exactly once when the hosting class archetype is initialized in memory.
+- **{ ... }**: An instance initialization block that executes automatically right before a class constructor is invoked during object birth.
+- **static void display()**: Establishes a class-wide behavior pattern that can be accessed globally without creating a concrete object instance first.
+
+**PROGRAM:**
+
+public class StaticKWord {
+
+&nbsp; static String staticVar = svMethod();
+
+&nbsp; String instVar = ivMethod();
+
+&nbsp; static {
+
+&nbsp; System.out.println("2)Static block called");
+
+&nbsp; }
+
+&nbsp; {
+
+&nbsp; System.out.println("5)Instance block called");
+
+&nbsp; }
+
+&nbsp; static String svMethod() {
+
+&nbsp; System.out.println("1)Static Variable initialized");
+
+&nbsp; return "staticVar";
+
+&nbsp; }
+
+&nbsp; String ivMethod() {
+
+&nbsp; System.out.println("4)Instance Variable initialized");
+
+&nbsp; return "instanceVar";
+
+&nbsp; }
+
+&nbsp; static void display() {
+
+&nbsp; System.out.println("7)Static Method");
+
+&nbsp; }
+
+&nbsp; StaticKWord() {
+
+&nbsp; System.out.println("6)Constructor called");
+
+&nbsp; }
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; System.out.println("3)Main method called");
+
+&nbsp; StaticKWord obj = new StaticKWord();
+
+&nbsp; StaticKWord.display();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+1)Static Variable initialized
+
+2)Static block called
+
+3)Main method called
+
+4)Instance Variable initialized
+
+5)Instance block called
+
+6)Constructor called
+
+7)Static Method
+
+**INFERENCE:**
+
+Instead of polluting a basic class blueprint with disorganized static fields and hardcoded execution blocks, shared global constants should be encapsulated using a structured enum (Enumeration Type). For configurations where you need to guarantee that only a single instance of a controller class ever coordinates system-wide operations, you can implement the formal Singleton Design Pattern.
+
+**Q2)** Write a Java Program to sort an array of strings.
+
+**PROCEDURE:**
+
+ **String\[\] strs**: Allocates a linear container structure inside memory designed specifically to hold reference pointer addresses pointing to immutable string objects.
+
+ **Arrays.toString(strs)**: Converts an array structure into a cleanly formatted, readable text string enclosed in square brackets for simple console output.
+
+ **Arrays.sort(strs)**: Invokes an optimized, built-in sorting method that rearranges elements sequentially based on their natural lexicographical order.
+
+**PROGRAM:**
+
+import java.util.Arrays;
+
+public class SortStr {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; String\[\] strs = {"AJP", "Lab"};
+
+&nbsp; System.out.println("Original Array:");
+
+&nbsp; System.out.println(Arrays.toString(strs));
+
+&nbsp; Arrays.sort(strs);
+
+&nbsp; System.out.println("Sorted Array:");
+
+&nbsp; System.out.println(Arrays.toString(strs));
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Original Array:
+
+\[AJP, Lab\]
+
+Sorted Array:
+
+\[AJP, Lab\]
+
+**INFERENCE:**
+
+Instead of mutating the original array using legacy utility commands, string lists can be sorted functionally using the Java Streams API by invoking Arrays.stream(strs).sorted().toArray(String\[\]::new). Furthermore, if you need to sort strings based on custom rules rather than standard alphabetical rules (such as arranging items by text length), you can pass a custom sorting rule via an explicit lambda implementation: Arrays.sort(strs, (s1, s2) -> Integer.compare(s1.length(), s2.length())).
+
+**Q3)** Write a Java Program to illustrate five String Buffer handling methods.
+
+**PROCEDURE:**
+
+ **StringBuffer**: Instantiates a thread-safe, mutable sequence of characters that can be updated repeatedly without spawning intermediate object trash.
+
+ **s.append(" class")**: Modifies the internal character store by joining a new sequence directly onto the terminal end of the existing text.
+
+ **s.insert(1, "d")**: Inserts a specified data block or character string into a precise index offset without overriding neighboring contents.
+
+ **s.delete(1, 2)**: Removes a specified slice of data from the mutable string container across designated start and end index boundary markers.
+
+**PROGRAM:**
+
+public class StrBufferMethod {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; StringBuffer s = new StringBuffer("AJP");
+
+&nbsp; System.out.println("Original String: " + s);
+
+&nbsp; System.out.println("Modified String: " + s.append(" class"));
+
+&nbsp; System.out.println("New String: " + s.insert(1, "d"));
+
+&nbsp; System.out.println("After deleting 'd': " + s.delete(1, 2));
+
+&nbsp; System.out.println("Replaced String: " + s.replace(4, s.capacity(), "lab"));
+
+&nbsp; System.out.println("Reversed String: " + s.reverse());
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Original String: AJP
+
+Modified String: AJP class
+
+New String: AdJP class
+
+After deleting 'd': AJP class
+
+Replaced String: AJP lab
+
+Reversed String: bal PJA
+
+**INFERENCE:**
+
+Because StringBuffer includes internal tracking synchronization to ensure absolute thread safety across multi-threaded applications, it carries a small operational overhead. For standard single-threaded environments, you can achieve better performance by swapping it out for StringBuilder, which shares an identical API but runs faster because it avoids synchronization locks.
+
+**Q4)** Write a Java Program to illustrate Inheritance, Member access, Types of Inheritance, Forms of Inheritance.
+
+**PROCEDURE:**
+
+ **extends A**: Implements single class inheritance, declaring that child class B inherits fields and foundational behaviors from parent blueprint A.
+
+ **abstract class E**: Defines an uninstantiable base architectural class template that serves solely to force child classes to implement its missing layout parts.
+
+ **interface F**: Declares a fully abstract type structure that outlines required method capabilities that any implementing concrete class must satisfy.
+
+ **implements F**: A class binding contract signaling that the targeting structure will explicitly flesh out the behaviors outlined within specified interface files.
+
+**PROGRAM:**
+
+class A {
+
+&nbsp; int a = 10;
+
+&nbsp; public void showA() { System.out.println(a);}
+
+}
+
+class B extends A {
+
+&nbsp; int b = 20;
+
+&nbsp; public void showB() { System.out.println(b);}
+
+}
+
+class C extends B {
+
+&nbsp; int c = 30;
+
+&nbsp; public void showC() { System.out.println(c);}
+
+}
+
+class D extends B {
+
+&nbsp; int d = 40;
+
+&nbsp; public void showD() { System.out.println(d);}
+
+}
+
+abstract class E {
+
+&nbsp; int e = 50;
+
+&nbsp; abstract void showE();
+
+}
+
+interface F {
+
+&nbsp; void showE();
+
+}
+
+class G extends E implements F {
+
+&nbsp; @Override
+
+&nbsp; public void showE() {
+
+&nbsp; System.out.println(e);
+
+&nbsp; }
+
+}
+
+public class InheritanceExample {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; C c = new C();
+
+&nbsp; c.showA();
+
+&nbsp; c.showB();
+
+&nbsp; c.showC();
+
+&nbsp; D d = new D();
+
+&nbsp; d.showA();
+
+&nbsp; d.showB();
+
+&nbsp; d.showD();
+
+&nbsp; G g = new G();
+
+&nbsp; g.showE();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+10
+
+20
+
+30
+
+10
+
+20
+
+40
+
+50
+
+**INFERENCE:**
+
+To avoid deep, brittle inheritance hierarchies (C extends B extends A) that make your code fragile and hard to modify, you should prioritize Composition over Inheritance. This design paradigm builds systems by passing smaller, focused component interfaces into objects dynamically, combining lightweight strategies via dependency injection rather than locking classes into rigid, hardcoded ancestral relationships.
+
+**Q5)** Write a Java Program to illustrate the uses of Super key word.
+
+**PROCEDURE:**
+
+ **this.a = b**: An absolute instance reference command targeting a class field belonging directly to the current class context to prevent variable shadowing errors.
+
+ **super(a)**: A mandatory constructor forwarding call that executes the initialization constructor sequence of the parent class before processing child logic.
+
+ **@Override**: A compiler instruction confirming that a method is intentionally overriding an inherited parent structure.
+
+ **super.show()**: Invokes the original behavioral implementation defined up in the ancestral class hierarchy, bypassing local overriding behaviors.
+
+**PROGRAM:**
+
+class A {
+
+&nbsp; int a;
+
+&nbsp; A(int a) {
+
+&nbsp; this.a = a;
+
+&nbsp; }
+
+&nbsp; public void show() { System.out.println(a); }
+
+}
+
+class B extends A {
+
+&nbsp; int a, b;
+
+&nbsp;
+
+&nbsp; B(int a, int b, int c) {
+
+&nbsp; super(a);
+
+&nbsp; this.a = b;
+
+&nbsp; this.b = c;
+
+&nbsp; }
+
+&nbsp; @Override
+
+&nbsp; public void show() {
+
+&nbsp; super.show();
+
+&nbsp; System.out.println(a + " " + b);
+
+&nbsp; }
+
+}
+
+public class SuperKWord {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; B obj = new B(10, 20, 30);
+
+&nbsp; obj.show();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+10
+
+20 30
+
+**INFERENCE:**
+
+Instead of resolving field name conflicts across parent and child scopes by scattering manual super keywords throughout your methods, you should follow standard encapsulation practices by marking class states as private. By restricting access to data fields and exposing them strictly through polymorphic getter or setter behaviors, you minimize field shadowing conflicts and eliminate the need to bypass child logic using low-level member referencing words.
+
+**Q6)** Write a Java Program to illustrate Method Overriding.
+
+**PROCEDURE:**
+
+- **class Student:** Defines a base class with a display() method to be overridden.
+- **class MethodOverride extends Student:** Declares a child class that inherits from the Student class.
+- **@Override public void display():** Annotates and defines a method in the child class that provides a specific implementation of the parent class's display() method.
+- **MethodOverride obj = new MethodOverride():** Creates an instance of the child class. Polymorphism ensures that the overridden version of the method is called.
+
+**PROGRAM:**
+
+class Student {
+
+&nbsp; int a = 10;
+
+&nbsp; public void display() {
+
+&nbsp; System.out.println(a);
+
+&nbsp; }
+
+}
+
+class MethodOverride extends Student {
+
+&nbsp; @Override
+
+&nbsp; public void display() {
+
+&nbsp; System.out.println(a);
+
+&nbsp; }
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; MethodOverride obj = new MethodOverride();
+
+&nbsp; obj.display();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+10
+
+**INFERENCE:**
+
+The provided program demonstrates simple method overriding. A more robust approach involves using abstract classes or interfaces to define contracts for behaviors. For instance, you could define an abstract display() method in the Student class, forcing any concrete subclass to provide a specific implementation. This ensures that all subclasses have the required behavior but can implement it in their own way.

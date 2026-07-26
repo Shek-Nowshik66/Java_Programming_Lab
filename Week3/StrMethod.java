@@ -8,8 +8,7 @@ public class StrMethod {
 		System.out.println("LowerCase String: " + s1.toLowerCase());
 		System.out.println("'o' String Index: " + s1.indexOf("o"));
 		System.out.println("'o' String Last Index: " + s1.lastIndexOf("o"));
-		s1.concat(" World");
-		System.out.println("Concat ' World' to the String: " + s1);
+		System.out.println("Concat ' World' to the String: " + s1.concat(" World"));
 		System.out.println("Is Same Strings: " + s1.equals(s2));
 		System.out.println("Is Same Strings: " + s1.equalsIgnoreCase(s2));
 		System.out.println("Compare two Strings: " + s1.compareTo(s2));
