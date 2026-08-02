@@ -64,8 +64,8 @@ class ClSum {
 
 **OUTPUT:**
 
-- Addition of 10 and 20 is 30
-- Addition of 25 and 35 is 60
+1. Addition of 10 and 20 is 30
+2. Addition of 25 and 35 is 60
 
 **INFERENCE:**
 
@@ -111,13 +111,13 @@ public class Sum {
 
 **OUTPUT:**
 
-- Enter a number: 6
+1. Enter a number: 6
 
 Enter a number: 7
 
 Addition of 6 and 7 is 13
 
-- Enter a number: 42
+1. Enter a number: 42
 
 Enter a number: 7
 
@@ -253,7 +253,7 @@ public class QuadRoot {
 
 **OUTPUT:**
 
-- Enter x^2 co-efficient: 2
+1. Enter x^2 co-efficient: 2
 
 Enter x co-efficient: 2
 
@@ -261,7 +261,7 @@ Enter constant: 4
 
 The roots are complex and imaginary.
 
-- Enter x^2 co-efficient: 2
+1. Enter x^2 co-efficient: 2
 
 Enter x co-efficient: -2
 
@@ -317,7 +317,7 @@ public class Oper {
 
 **OUTPUT:**
 
-- Increment of 2 is 3
+1. Increment of 2 is 3
 
 Decrement of 3 is 2
 
@@ -331,7 +331,7 @@ Bitwise Right Shift of 3 is 1
 
 Bitwise Left Shift of 2 is 4
 
-- Increment of 4 is 5
+1. Increment of 4 is 5
 
 Decrement of 5 is 4
 
@@ -1966,3 +1966,177 @@ class MethodOverride extends Student {
 **INFERENCE:**
 
 The provided program demonstrates simple method overriding. A more robust approach involves using abstract classes or interfaces to define contracts for behaviors. For instance, you could define an abstract display() method in the Student class, forcing any concrete subclass to provide a specific implementation. This ensures that all subclasses have the required behavior but can implement it in their own way.
+
+**WEEK-5**
+
+(Interface, final and keywords)
+
+**Q1)** Write a Java Program to illustrate This keyword and Final keyword.
+
+**PROCEDURE:**
+
+- **final class Square:** Declares a class that cannot be extended or subclassed.
+- **final int s = 4:** Declares a constant variable whose value cannot be changed after initialization.
+- **final void area():** Declares a method that cannot be overridden by subclasses.
+- **this.s:** A reference variable that refers to the current class instance. It is used here to access the instance variable s within the class.
+
+**PROGRAM:**
+
+final class Square {
+
+&nbsp; final int s = 4;
+
+&nbsp; final void area() {
+
+&nbsp; System.out.println("Area: " + (this.s \* this.s));
+
+&nbsp; }
+
+}
+
+public class FinalThis {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; Square s = new Square();
+
+&nbsp; s.area();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Area: 16
+
+**INFERENCE:**
+
+The final keyword is used to create immutable entities (classes, methods, variables) to enforce design constraints or for security/performance reasons. While this is useful for distinguishing instance variables from local variables, its usage can be minimized by employing clear naming conventions (e.g., prefixing parameters with p). For immutable data, you can also use the record keyword (introduced in newer Java versions) to create simple, immutable data carriers with less boilerplate code.
+
+**Q2)** Write a Java Program to give simple example for abstract class.
+
+**PROCEDURE:**
+
+- **abstract class Student:** Defines an abstract class that cannot be instantiated and serves as a blueprint for subclasses.
+- **public abstract void show();:** Declares an abstract method with no implementation. This forces any concrete subclass to provide its own implementation.
+- **public class Aclass extends Student:** Defines a concrete subclass that inherits from the abstract Student class.
+- **@Override public void show():** Annotates the implemented method to confirm that it is overriding the abstract method from the parent class. It provides the specific implementation for the show() method.
+
+**PROGRAM:**
+
+abstract class Student {
+
+&nbsp; public abstract void show();
+
+}
+
+public class Aclass extends Student{
+
+&nbsp; @Override
+
+&nbsp; public void show() {
+
+&nbsp; System.out.println("Abstract method call intialized");
+
+&nbsp; }
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; Aclass a = new Aclass();
+
+&nbsp; a.show();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Abstract method call intialized
+
+**INFERENCE:**
+
+Abstract classes are useful when you have common state and behavior to share among subclasses, along with some methods that must be implemented by the subclasses. An alternative approach is to use an **interface**, which is purely abstract and allows a class to implement multiple contracts. Unlike abstract classes, interfaces can be implemented by unrelated classes, promoting greater flexibility and decoupling.
+
+**Q3)** Write a Java Program to illustrate Multiple Inheritance using interfaces.
+
+**PROCEDURE:**
+
+- **interface Cricket / Running:** Declares abstract types that define a contract of methods that implementing classes must fulfill. They contain method signatures without implementations.
+- **public class MultiInter implements Cricket, Running:** Declares a concrete class that implements **multiple interfaces**. This is Java's way of achieving multiple inheritance of type.
+- **@Override public void hitSix() / run() / play():** Annotates and provides concrete implementations for all abstract methods declared in both interfaces. The class must implement all methods from both interfaces.
+
+**PROGRAM:**
+
+interface Cricket {
+
+&nbsp; void hitSix();
+
+&nbsp; void play();
+
+}
+
+interface Running {
+
+&nbsp; void run();
+
+&nbsp; void play();
+
+}
+
+public class MultiInter implements Cricket, Running{
+
+&nbsp; @Override
+
+&nbsp; public void hitSix() {
+
+&nbsp; System.out.println("Sixer");
+
+&nbsp; }
+
+&nbsp;
+
+&nbsp; @Override
+
+&nbsp; public void run() {
+
+&nbsp; System.out.println("Runner");
+
+&nbsp; }
+
+&nbsp;
+
+&nbsp; @Override
+
+&nbsp; public void play() {
+
+&nbsp; System.out.println("Player");
+
+&nbsp; }
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; MultiInter obj = new MultiInter();
+
+&nbsp; obj.hitSix();
+
+&nbsp; obj.run();
+
+&nbsp; obj.play();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Sixer
+
+Runner
+
+Player
+
+**INFERENCE:**
+
+Interfaces enable a form of multiple inheritance by allowing a class to implement multiple types. This provides a flexible way to define capabilities. A modern alternative is to use **default methods** in interfaces, which allow you to provide default implementations. This helps with API evolution without breaking existing code. Additionally, the **Strategy Pattern** can be used, where behavior is encapsulated in separate classes that implement the interface, allowing behavior to be swapped at runtime.

@@ -5,7 +5,7 @@ abstract class Student {
 public class Aclass extends Student{
 	@Override
 	public void show() {
-		System.out.println("Abstract method called intialized");
+		System.out.println("Abstract method call intialized");
 	}
 
 	public static void main(String[] args) {
