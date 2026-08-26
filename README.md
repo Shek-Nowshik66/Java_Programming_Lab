@@ -1521,7 +1521,7 @@ String contains 'ell': true
 
 **INFERENCE:**
 
-When your applications demand heavy, repetitive text manipulations, swapping immutable String methods for StringBuilder operations mitigates memory thrashing. Additionally, complex string validations-such as verifying prefixes, matching suffix variants, or extracting matching fragments-can be written cleanly and robustly by employing the modern java.util.regex.Pattern (Regular Expressions) framework.
+When your applications demand heavy, repetitive text manipulations, swapping immutable String methods for StringBuilder operations mitigates memory thrashing. Additionally, complex string validations—such as verifying prefixes, matching suffix variants, or extracting matching fragments—can be written cleanly and robustly by employing the modern java.util.regex.Pattern (Regular Expressions) framework.
 
 **WEEK-4**
 
@@ -1969,7 +1969,7 @@ The provided program demonstrates simple method overriding. A more robust approa
 
 **WEEK-5**
 
-(Interface, final and keywords)
+(Interface, final and this keywords)
 
 **Q1)** Write a Java Program to illustrate This keyword and Final keyword.
 
@@ -2140,3 +2140,563 @@ Player
 **INFERENCE:**
 
 Interfaces enable a form of multiple inheritance by allowing a class to implement multiple types. This provides a flexible way to define capabilities. A modern alternative is to use **default methods** in interfaces, which allow you to provide default implementations. This helps with API evolution without breaking existing code. Additionally, the **Strategy Pattern** can be used, where behavior is encapsulated in separate classes that implement the interface, allowing behavior to be swapped at runtime.
+
+**WEEK-6**
+
+(String Tokenizer, Random, Streams and interface Inheritance)
+
+**Q1)** Write a Java Program to demonstrate interface inheritance.
+
+**PROCEDURE:**
+
+- **interface A:** Declares a parent interface with an abstract method show().
+- **interface B extends A:** Demonstrates interface inheritance, where interface B inherits the method from interface A and declares an additional abstract method display().
+- **public class InherInter implements B:** Defines a concrete class that implements interface B. Since B extends A, the class must provide implementations for all methods from both interfaces (show() and display()).
+- **@Override:** Annotations that confirm the methods are overriding the abstract methods from the interfaces.
+
+**PROGRAM:**
+
+interface A {
+
+&nbsp; void show();
+
+}
+
+interface B extends A {
+
+&nbsp; void display();
+
+}
+
+public class InherInter implements B {
+
+&nbsp; @Override
+
+&nbsp; public void show() {
+
+&nbsp; System.out.println("Show");
+
+&nbsp; }
+
+&nbsp; @Override
+
+&nbsp; public void display() {
+
+&nbsp; System.out.println("Display");
+
+&nbsp; }
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; InherInter obj = new InherInter();
+
+&nbsp; obj.show();
+
+&nbsp; obj.display();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Show
+
+Display
+
+**INFERENCE:**
+
+Interface inheritance allows one interface to extend multiple other interfaces, creating a hierarchy of contracts. This promotes code reusability and logical organization of APIs. An alternative approach is to use composition with default methods to combine behaviours without creating deep inheritance hierarchies. Additionally, functional interfaces (single abstract method) can be used with lambda expressions for more concise implementations.
+
+**Q2)** Write a Java Program to illustrate Random class.
+
+**PROCEDURE:**
+
+- **import java.util.Random:** Imports the Random class from the java.util package, which provides methods for generating pseudo-random numbers.
+- **Random r = new Random():** Creates an instance of the Random class, which acts as a random number generator.
+- **r.nextInt():** Generates a random integer within the full range of int values (including negative numbers).
+- **r.nextInt(100):** Generates a random integer between 0 (inclusive) and the specified bound (exclusive), here 100.
+- **r.nextDouble():** Generates a random double value between 0.0 and 1.0.
+- **r.nextFloat():** Generates a random float value between 0.0 and 1.0.
+- **r.nextBoolean():** Generates a random boolean value (true or false).
+
+**PROGRAM:**
+
+import java.util.Random;
+
+public class Rclass {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; Random r = new Random();
+
+&nbsp; System.out.println("Random Integer: " + r.nextInt());
+
+&nbsp; System.out.println("Random Integer less than 100: " + r.nextInt(100));
+
+&nbsp; System.out.println("Random Double: " + r.nextDouble());
+
+&nbsp; System.out.println("Random Double less than 50: " + r.nextDouble(50));
+
+&nbsp; System.out.println("Random Float: " + r.nextFloat());
+
+&nbsp; System.out.println("Random Boolean: " + r.nextBoolean());
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Random Integer: -1006019091
+
+Random Integer less than 100: 28
+
+Random Double: 0.7544786410710266
+
+Random Double less than 50: 2.5695197217994012
+
+Random Float: 0.7677124
+
+Random Boolean: false
+
+**INFERENCE:**
+
+The Random class is useful for simulations, games, and testing. For cryptographic applications requiring secure random numbers, the java.security.SecureRandom class is preferred as it provides stronger randomness. Alternatively, the Math.random() method can be used for simple cases, but it only returns double values between 0.0 and 1.0. The ThreadLocalRandom class provides better performance in multi-threaded environments.
+
+**Q3)** Write a Java Program to illustrate String Tokenizer class.
+
+**PROCEDURE:**
+
+- **import java.util.StringTokenizer:** Imports the StringTokenizer class, which is used to break a string into tokens (smaller parts) based on delimiters.
+- **StringTokenizer st = new StringTokenizer(s):** Creates a StringTokenizer object that tokenizes the string s using default delimiters (whitespace characters).
+- **st.hasMoreTokens():** A method that returns true if there are more tokens available in the string.
+- **st.nextToken():** Retrieves the next token from the string as a String object.
+
+**PROGRAM:**
+
+import java.util.StringTokenizer;
+
+public class DispSToken {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; String s = "Welcome to AJP Lab";
+
+&nbsp; StringTokenizer st = new StringTokenizer(s);
+
+&nbsp; while(st.hasMoreTokens())
+
+&nbsp; System.out.print(st.nextToken() + " ");
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Welcome to AJP Lab
+
+**INFERENCE:**
+
+While StringTokenizer is a legacy class, it is still useful for simple tokenization. A more modern alternative is the String.split() method, which uses regular expressions to split strings into arrays. For more complex parsing scenarios, the java.util.Scanner class or regular expressions (java.util.regex.Pattern) are recommended, as they offer more flexibility and better performance.
+
+**Q4)** Write a Java Program that reads a line of integers, and then displays each integer, and the sum of all the integers (Using String Tokenizer).
+
+**PROCEDURE:**
+
+- **Scanner s = new Scanner(**[**System**.**in**](https://system.in/)**):** Creates a Scanner object to read input from the user.
+- **StringTokenizer obj = new StringTokenizer(gNum):** Tokenizes the user-entered string containing numbers separated by spaces.
+- **Integer.parseInt(a):** Converts each token (string) into an integer value.
+- **sum += Integer.parseInt(a):** Accumulates the sum of all integers.
+- **System.out.print(a + " "):** Displays each integer as it is processed.
+
+**PROGRAM:**
+
+import java.util.\*;
+
+public class SToken {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; Scanner s = new Scanner(System.in);
+
+&nbsp; System.out.print("Enter numbers with spaces: ");
+
+&nbsp; String gNum = s.nextLine();
+
+&nbsp; StringTokenizer obj = new StringTokenizer(gNum);
+
+&nbsp; int sum = 0;
+
+&nbsp; while(obj.hasMoreTokens()) {
+
+&nbsp; String a = obj.nextToken();
+
+&nbsp; sum += Integer.parseInt(a);
+
+&nbsp; System.out.print(a + " ");
+
+&nbsp; }
+
+&nbsp; System.out.println("\\nSum: " + sum);
+
+&nbsp; s.close();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Enter numbers with spaces: 10 20 30
+
+10 20 30
+
+Sum: 60
+
+**INFERENCE:**
+
+This approach using StringTokenizer is straightforward for space-separated integers. A more concise alternative is to use String.split() and process the resulting array with streams: Arrays.stream(gNum.split(" ")).mapToInt(Integer::parseInt).sum(). Additionally, the Scanner class itself can tokenize integers directly using s.nextInt() if the input format is known, eliminating the need for separate tokenization.
+
+**Q5)** Write a Java Program to write data into a file using the FileOutputStream class (Byte Stream).
+
+**PROCEDURE:**
+
+- **import java.io.FileOutputStream:** Imports the FileOutputStream class, which is used to write raw bytes to a file.
+- **FileOutputStream fout = new FileOutputStream("sample.txt"):** Creates a file output stream to write data into the specified file. If the file does not exist, it is created.
+- **msg.getBytes():** Converts the string message into an array of bytes.
+- **fout.write(msg.getBytes()):** Writes the byte array to the file.
+- **fout.close():** Closes the file output stream to release system resources.
+- **throws IOException:** Declares that the method may throw an I/O exception during file operations.
+
+**PROGRAM:**
+
+import java.io.FileOutputStream;
+
+import java.io.IOException;
+
+public class FStr {
+
+&nbsp; public static void main(String\[\] args) throws IOException {
+
+&nbsp; FileOutputStream fout = new FileOutputStream("sample.txt");
+
+&nbsp; String msg = "Welcome to AJP Lab";
+
+&nbsp; fout.write(msg.getBytes());
+
+&nbsp; fout.close();
+
+&nbsp; System.out.println("Data Written successfully");
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Data Written successfully
+
+**INFERENCE:**
+
+FileOutputStream is suitable for writing binary data or text data as bytes. For text data, the FileWriter class (Character Stream) is more convenient as it handles character encoding automatically. A more modern approach is to use Files.write(Path.of("sample.txt"), msg.getBytes()) from the java.nio.file package, which simplifies file operations and handles resource management automatically.
+
+**Q6)** Write a Java Program to read data from a file using the FileInputStream class (Byte Stream).
+
+**PROCEDURE:**
+
+- **import java.io.FileInputStream:** Imports the FileInputStream class, which is used to read raw bytes from a file.
+- **FileInputStream fin = new FileInputStream("sample.txt"):** Creates a file input stream to read data from the specified file.
+- **fin.read():** Reads the next byte of data from the file. Returns -1 when the end of the file is reached.
+- **while ((ch = fin.read()) != -1):** A loop that continues reading bytes until the end of the file.
+- **(char)ch:** Casts the integer value of the byte to a character for display.
+
+**PROGRAM:**
+
+import java.io.FileInputStream;
+
+import java.io.IOException;
+
+public class FRead {
+
+&nbsp; public static void main(String\[\] args) throws IOException {
+
+&nbsp; FileInputStream fin = new FileInputStream("sample.txt");
+
+&nbsp; int ch = 0;
+
+&nbsp; while((ch = fin.read()) != -1)
+
+&nbsp; System.out.print((char)ch);
+
+&nbsp; fin.close();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Welcome to AJP Lab
+
+**INFERENCE:**
+
+FileInputStream is suitable for reading binary files or byte data. For reading text files, FileReader (Character Stream) is more appropriate as it handles character encoding. A more concise alternative is to use Files.readAllLines(Path.of("sample.txt")) from the java.nio.file package, which reads all lines from a file into a List&lt;String&gt;. For large files, using BufferedReader with FileReader provides better performance through buffering.
+
+**WEEK-7**
+
+(File classes)
+
+**Q1)** Write a Java Program to make frequency count of words in a given text.
+
+**PROCEDURE:**
+
+- **Scanner s = new Scanner(**[**System**.**in**](https://system.in/)**):** Creates a Scanner object to read input from the user.
+- **String str = s.nextLine():** Reads the entire line of text entered by the user.
+- **str.split(" "):** Splits the string into an array of substrings using space as the delimiter.
+- **Wcount.length:** Returns the total number of words (tokens) in the array.
+
+**PROGRAM:**
+
+import java.util.Scanner;
+
+public class FreqCoun {
+
+&nbsp; public static void main(String\[\] args) {
+
+&nbsp; Scanner s = new Scanner(System.in);
+
+&nbsp; System.out.print("Enter a sentence: ");
+
+&nbsp; String str = s.nextLine();
+
+&nbsp; String Wcount\[\] = str.split(" ");
+
+&nbsp; System.out.println("Words count: " + Wcount.length);
+
+&nbsp; s.close();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Enter a sentence: Welcome to AJP lab
+
+Words count: 4
+
+**INFERENCE:**
+
+This program performs a simple word count by splitting on spaces. For a more comprehensive frequency count (counting occurrences of each unique word), you can use a HashMap&lt;String, Integer&gt; to store word counts. Additionally, the split() method can be enhanced with regular expressions to handle punctuation and multiple spaces (e.g., split("\\\\s+")). A more robust solution would use the java.util.stream API: Arrays.stream(str.split("\\\\s+")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).
+
+**Q2)** Write a Java Program that reads a file name from the user, then displays information about whether the file exists, whether the file is readable, whether the file is writable, the type of file and the length of the file in bytes.
+
+**PROCEDURE:**
+
+- **import java.io.File:** Imports the File class, which provides methods to interact with files and directories.
+- **File f = new File(fn):** Creates a File object representing the specified file path.
+- **f.exists():** Returns true if the file or directory exists.
+- **f.createNewFile():** Creates an empty file if it does not already exist.
+- **f.canRead() / f.canWrite():** Returns true if the file is readable or writable, respectively.
+- **f.getName():** Returns the name of the file.
+- **f.getAbsolutePath():** Returns the absolute path of the file.
+- **f.length():** Returns the size of the file in bytes.
+- **throws IOException:** Declares that the method may throw an I/O exception.
+
+**PROGRAM:**
+
+import java.io.\*;
+
+import java.util.Scanner;
+
+public class FileOper {
+
+&nbsp; public static void main(String\[\] args) throws IOException {
+
+&nbsp; Scanner s = new Scanner(System.in);
+
+&nbsp; System.out.println("Enter a file name: ");
+
+&nbsp; String fn = s.nextLine();
+
+&nbsp; File f = new File(fn);
+
+&nbsp; if(f.exists())
+
+&nbsp; System.out.println("File already exists");
+
+&nbsp; else {
+
+&nbsp; if(f.createNewFile())
+
+&nbsp; System.out.println("File created");
+
+&nbsp; else
+
+&nbsp; System.out.println("File could not be created");
+
+&nbsp; }
+
+&nbsp; System.out.println("Can write file: " + f.canWrite());
+
+&nbsp; System.out.println("Can read file: " + f.canRead());
+
+&nbsp; System.out.println("File: " + f.getName());
+
+&nbsp; System.out.println("File absolute path: " + f.getAbsolutePath());
+
+&nbsp; System.out.println("File length in bytes: " + f.length());
+
+&nbsp; s.close();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Enter a file name:
+
+one.txt
+
+File already exists
+
+Can write file: true
+
+Can read file: true
+
+File: one.txt
+
+File absolute path: D:\\Java_Programming_Lab\\week7\\one.txt
+
+File length in bytes: 48
+
+**INFERENCE:**
+
+The File class provides basic file system operations. A more modern approach is to use the java.nio.file.Files and java.nio.file.Path classes, which offer improved functionality and better error handling. For example, Files.exists(path), Files.isReadable(path), Files.size(path), and Files.getAttribute(path, "isDirectory") provide similar information with a more intuitive API and support for symbolic links.
+
+**Q3)** Write a Java Program that reads a file and displays the file on the screen, with a line number before each line.
+
+**PROCEDURE:**
+
+- **import java.io.File / java.util.Scanner:** Imports the File and Scanner classes for file handling.
+- **File f = new File("one.txt"):** Creates a File object pointing to the specified file.
+- **Scanner s = new Scanner(f):** Creates a Scanner that reads from the file.
+- **s.hasNextLine():** Checks if there are more lines to read from the file.
+- **s.nextLine():** Reads the next line from the file.
+- **int c = 1:** A counter variable that increments for each line to display line numbers.
+
+**PROGRAM:**
+
+import java.io.\*;
+
+import java.util.\*;
+
+public class LinePrint {
+
+&nbsp; public static void main(String\[\] args) throws Exception {
+
+&nbsp; File f = new File("one.txt");
+
+&nbsp; Scanner s = new Scanner(f);
+
+&nbsp; int c = 1;
+
+&nbsp; while(s.hasNextLine()) {
+
+&nbsp; String l = s.nextLine();
+
+&nbsp; System.out.println(c++ + ") " + l);
+
+&nbsp; }
+
+&nbsp; s.close();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+1. Welcome to AJP Lab
+
+2. This is CSE Third Year
+
+3. hello
+
+**INFERENCE:**
+
+This program demonstrates basic file reading with line numbering. A more efficient alternative for large files is to use BufferedReader with Files.newBufferedReader(path), which provides buffered reading. The java.nio.file.Files.lines(path) method can be used with streams: Files.lines(path).forEach(line -> System.out.println(++count + ")" + line)). This approach is more memory-efficient for large files and allows for functional processing.
+
+**Q4)** Write a Java Program that displays the number of characters, lines and words in a text file.
+
+**PROCEDURE:**
+
+- **import java.io.File / java.util.Scanner:** Imports the File and Scanner classes for file handling.
+- **File f = new File("one.txt"):** Creates a File object pointing to the specified file.
+- **Scanner s = new Scanner(f):** Creates a Scanner that reads from the file.
+- **s.hasNextLine():** Checks if there are more lines to read.
+- **s.nextLine():** Reads the next line from the file.
+- **line.split(" "):** Splits the line into words using space as the delimiter.
+- **word.length():** Calculates the number of characters in each word.
+- **Counters:** Variables (ICount, wCount, cCount) track the number of lines, words, and characters respectively.
+
+**PROGRAM:**
+
+import java.io.\*;
+
+import java.util.Scanner;
+
+public class FContent {
+
+&nbsp; public static void main(String\[\] args) throws Exception {
+
+&nbsp; File f = new File("one.txt");
+
+&nbsp; Scanner s = new Scanner(f);
+
+&nbsp; int lCount = 0, wCount = 0, cCount = 0;
+
+&nbsp; while(s.hasNextLine()) {
+
+&nbsp; String line = s.nextLine();
+
+&nbsp; lCount++;
+
+&nbsp; String words\[\] = line.split(" ");
+
+&nbsp; wCount += words.length;
+
+&nbsp; for(String word : words) {
+
+&nbsp; cCount += word.length();
+
+&nbsp; }
+
+&nbsp; }
+
+&nbsp; System.out.println("Line count is: " + lCount);
+
+&nbsp; System.out.println("Word count is: " + wCount);
+
+&nbsp; System.out.println("Character count is: " + cCount);
+
+&nbsp; s.close();
+
+&nbsp; }
+
+}
+
+**OUTPUT:**
+
+Line count is: 3
+
+Word count is: 10
+
+Character count is: 38
+
+**INFERENCE:**
+
+This program provides basic file statistics. For more accurate character counting (including spaces), you can simply count all characters in each line using line.length(). A more efficient alternative using streams: Files.lines(path).mapToLong(String::length).sum() for character count, and Files.lines(path).count() for line count. For word counting, a regular expression like split("\\\\s+") handles multiple spaces and tabs better. For large files, using BufferedReader provides better performance than Scanner.
